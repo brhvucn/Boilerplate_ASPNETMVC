@@ -13,9 +13,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C297EF7E-3
 		test_readme.md = test_readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.Frontend", "CRM.Frontend\CRM.Frontend.csproj", "{ACB9ABAF-C11A-4D4C-90D6-D84786312F90}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB9ABAF-C11A-4D4C-90D6-D84786312F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB9ABAF-C11A-4D4C-90D6-D84786312F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB9ABAF-C11A-4D4C-90D6-D84786312F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB9ABAF-C11A-4D4C-90D6-D84786312F90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACB9ABAF-C11A-4D4C-90D6-D84786312F90} = {A98669BD-790C-402C-AA03-1B7E34E0DAD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1267C42-A1BB-4B62-8DC1-BDC9903EAC11}
