@@ -1,0 +1,2 @@
+# Src folder
+This folder will contain all the projects in the application. This means that each project here will be a project that contributes to the entire application. In this case there will be a project per layer in the application and for the MVC application itself.
