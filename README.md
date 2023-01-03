@@ -4,3 +4,6 @@ This is a sample implementation of a simple ASP.NET MVC application. The applica
 * The difference between DTO and domain entities
 * The usage of DTO and Request objects
 * The location of the client and how the client communicates with the backend
+
+## A CRM system
+This boilerplate implementation will be a simple Customer Relationship Management (CRM) System. A system like this enables a company to keep track of all of their customers.
