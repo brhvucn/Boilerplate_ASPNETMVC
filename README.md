@@ -1,5 +1,7 @@
 (Not fully implemented yet)
 
+[![.NET](https://github.com/brhvucn/Boilerplate_ASPNETMVC/actions/workflows/dotnet.yml/badge.svg)](https://github.com/brhvucn/Boilerplate_ASPNETMVC/actions/workflows/dotnet.yml)
+
 # Boilerplate ASP.NET MVC
 This is a sample implementation of a simple ASP.NET MVC application. The application is documented using `markdown` files in each folder, where there is explanation necessary. There are several important parts that this project highlights:
 
