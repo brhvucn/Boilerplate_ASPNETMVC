@@ -1,0 +1,2 @@
+# Business Logic
+This solution folder contains projects for the business logic. This may be implemented in many ways (e.g. in Clean Architecture this is the "Application" layer). In this solution the Facade pattern will be used.
