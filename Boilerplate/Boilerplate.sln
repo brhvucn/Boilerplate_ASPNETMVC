@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 		src.dataaccess.readme.md = src.dataaccess.readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.UnitTest.Helpers", "CRM.UnitTest.Helpers\CRM.UnitTest.Helpers.csproj", "{94309F1D-9592-4943-BD54-E6D5A97A2CBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{D0A22D90-33C9-443D-84B1-332862874FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0A22D90-33C9-443D-84B1-332862874FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0A22D90-33C9-443D-84B1-332862874FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94309F1D-9592-4943-BD54-E6D5A97A2CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94309F1D-9592-4943-BD54-E6D5A97A2CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94309F1D-9592-4943-BD54-E6D5A97A2CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94309F1D-9592-4943-BD54-E6D5A97A2CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{4FDF5EC5-E248-46CA-A558-C1C177A3A13A} = {A98669BD-790C-402C-AA03-1B7E34E0DAD2}
 		{480B1FA6-80B3-4C53-AF74-1A50B9509A4B} = {A98669BD-790C-402C-AA03-1B7E34E0DAD2}
 		{3D01093B-9940-48C2-936E-E42E30519E56} = {A98669BD-790C-402C-AA03-1B7E34E0DAD2}
+		{94309F1D-9592-4943-BD54-E6D5A97A2CBA} = {C297EF7E-3CAE-457E-811A-0A2803526648}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1267C42-A1BB-4B62-8DC1-BDC9903EAC11}
