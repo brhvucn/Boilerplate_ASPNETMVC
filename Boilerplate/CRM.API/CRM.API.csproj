@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CRM.BLL\CRM.BLL.csproj" />
+    <ProjectReference Include="..\CRM.DAL\CRM.DAL.csproj" />
+    <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -21,7 +21,7 @@ namespace CRM.Domain.ValueObjects
             ZipCode = zipcode;
         }
 
-        public Address() { } //for ORM
+        public Address() { } //for ORM - DO NOT USE AS "NEW" - THAT WOULD BYPASS THE GUARD CLAUSES
 
         public static Result<Address> Create(string street, string city, string zipcode)
         {            

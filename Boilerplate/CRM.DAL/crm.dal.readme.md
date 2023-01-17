@@ -1,0 +1,2 @@
+﻿# Data Access
+In this project the contracts (interfaces) and the implementation is in the same project. This is very classic for the 3-layered architecture. In a clean architecture the contracts would have bee closer to the application logic.

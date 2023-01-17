@@ -1,2 +1,4 @@
 ﻿# CRM.API
 This project is a Web API that exposes a number of endpoints to other services. This is usefull when you need e.g. Angular/React/Vue applications to interact with the application.
+
+Please note that this API has references to both the BLL and the DAL projects. This is not the common approach in the 3 layered architecture. However we need to configure the Dependency Injection (this is the only reason for these references). The BLL could configure the DAL and as such follow the guidelines of each layer only referring the layer below. This approach is not chosen here, since this would require the BLL layer to know how the DAL should be implemented. Both approaches could be used.
