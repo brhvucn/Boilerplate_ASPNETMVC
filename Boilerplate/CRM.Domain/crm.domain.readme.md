@@ -1,0 +1,2 @@
+﻿# CRM.Domain
+This project contains the domain classes (entities) of the application. The project also contains data transfer objects (dto) to push data to the API. The requests are incoming data from the API and typically need additional validation.
