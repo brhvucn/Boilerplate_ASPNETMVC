@@ -21,7 +21,7 @@ namespace CRM.BLL
             this.logger = logger;
         }
 
-        public async Task<Result> CreateCompany(CreateCompanyRequest request)
+        public async Task<Result<CompanyDto>> CreateCompany(CreateCompanyRequest request)
         {
             //validate the request
             CreateCompanyRequest.Validator validator = new CreateCompanyRequest.Validator();
@@ -31,12 +31,13 @@ namespace CRM.BLL
                 //continue to create
                 Company company = this.mapper.Map<Company>(request);
                 var companyResult = await this.companyRepository.CreateAsync(company);
-                return Result.Ok(companyResult);
+                CompanyDto dtoResult = this.mapper.Map<CompanyDto>(companyResult);
+                return Result.Ok<CompanyDto>(dtoResult);
             }
             else
             {
                 string errormessages = string.Join(Environment.NewLine, result.Errors);
-                return Result.Fail(Errors.General.CouldNotValidateBusinessLogic(errormessages));
+                return Result.Fail<CompanyDto>(Errors.General.CouldNotValidateBusinessLogic(errormessages));
             }
         }
 

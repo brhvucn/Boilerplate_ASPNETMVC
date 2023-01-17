@@ -1,4 +1,5 @@
 ﻿using CRM.Domain.Common;
+using CRM.Domain.Dto;
 using CRM.Domain.Request.Company;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,6 @@ namespace CRM.BLL.Contracts
 {
     public interface ICompanyFacade
     {
-        Task<Result> CreateCompany(CreateCompanyRequest request);
+        Task<Result<CompanyDto>> CreateCompany(CreateCompanyRequest request);
     }
 }
