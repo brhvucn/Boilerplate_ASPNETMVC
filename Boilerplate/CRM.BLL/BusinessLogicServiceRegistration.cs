@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRM.BLL
 {
+    //This class registers the dependency injection for this layer
     public static class BusinessLogicServiceRegistration
     {
         public static IServiceCollection AddBusinessLogicServices(this IServiceCollection services)

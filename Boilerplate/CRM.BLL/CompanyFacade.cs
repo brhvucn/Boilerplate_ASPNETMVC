@@ -9,11 +9,12 @@ using Microsoft.Extensions.Logging;
 
 namespace CRM.BLL
 {
+    //the purpose of this class is to perform the business log sourrounding the logic in the application.
     public class CompanyFacade : ICompanyFacade
     {
         private ICompanyRepository companyRepository;
-        private IMapper mapper;
-        private ILogger<CompanyFacade> logger;
+        private IMapper mapper; //helps us map from one object to another
+        private ILogger<CompanyFacade> logger; //enables us to log, using the built in logging mechanism.
         public CompanyFacade(ICompanyRepository companyRepository, IMapper mapper, ILogger<CompanyFacade> logger)
         {
             this.companyRepository = companyRepository;
@@ -36,6 +37,7 @@ namespace CRM.BLL
             }
             else
             {
+                this.logger.LogError("Error Creating company: " + string.Join(Environment.NewLine, result.Errors));
                 string errormessages = string.Join(Environment.NewLine, result.Errors);
                 return Result.Fail<CompanyDto>(Errors.General.CouldNotValidateBusinessLogic(errormessages));
             }
