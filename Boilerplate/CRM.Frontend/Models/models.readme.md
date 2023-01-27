@@ -1,0 +1,2 @@
+﻿# Models
+In this folder is all the Models for the MVC solution. This is the M in MVC. The models refer typically to ViewModels (VM) and not to Entities (like domain models). Domain entities will typically live in a separate folder, or like in this project in a separate project: `CRM.Domain`. If the structure of this folder contains other folders it is recommended to add the "usings" or these namespaces to the `_ViewImports.cshtml` file.
