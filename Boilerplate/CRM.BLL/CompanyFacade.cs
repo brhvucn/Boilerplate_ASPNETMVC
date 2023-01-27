@@ -19,7 +19,7 @@ namespace CRM.BLL
         {
             this.companyRepository = companyRepository;
             this.mapper = mapper;
-            this.logger = logger;
+            this.logger = logger;            
         }
 
         public async Task<Result<CompanyDto>> CreateCompany(CreateCompanyRequest request)

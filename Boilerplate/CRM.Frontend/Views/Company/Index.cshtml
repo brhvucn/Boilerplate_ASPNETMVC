@@ -1,2 +1,51 @@
 ﻿@model CompaniesVM
-<p>All the companies</p>
+<div class="box">
+    <h1 class="title is-4">
+        Companies (@Model.Companies.Count())
+        <div class="buttons are-small is-pulled-right">
+            <button class="button is-success js-modal-trigger" data-target="createCompanyModal"><i class="lni lni-plus"></i>Create</button>
+        </div>
+    </h1>
+
+    <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in Model.Companies)
+            {
+                <tr>
+                    <td>@company.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<!-- modal for create company-->
+<div id="createCompanyModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <form asp-controller="Company" asp-action="CreateCompany">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button type="button" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" name="companyName" type="text" placeholder="Name of the company">
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button type="submit" class="button is-success">Save changes</button>
+                <button type="button" class="button">Cancel</button>
+            </footer>
+        </form>
+    </div>
+</div>
