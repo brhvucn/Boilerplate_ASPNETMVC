@@ -12,5 +12,7 @@ This boilerplate implementation will be a simple Customer Relationship Managemen
 
 ## Ressources
 There are several libraries used in this solution:
+
 [FluentValidation](https://docs.fluentvalidation.net/en/latest/) NuGet package to validate business logic. Examples of this can be seen in the `Request` classes in the `CRM.Domain` project.
+
 [AutoMapper](https://docs.automapper.org/en/stable/index.html) NuGet package to help with mapping between objects/entities. This can be seen in the `Facade` classes in the `CRM.BLL` project.
