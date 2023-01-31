@@ -37,7 +37,7 @@
                     </a>
                     <a class="navbar-item" href="/">
                         Menu 2
-                    </a>                    
+                    </a>
                 </div>
 
             </div>
@@ -48,14 +48,28 @@
         <div class="columns">
             <div class="column is-3 ">
                 <aside class="menu is-hidden-mobile">
-                   <partial name="_partialLeftNavigation"/>
+                    <partial name="_partialLeftNavigation" />
                 </aside>
             </div>
-            <div class="column is-9">                
+            <div class="column is-9">
                 <section>@RenderBody()</section>
             </div>
         </div>
     </div>
+    <!-- the error dialog-->
+    @if (TempData.ContainsKey("Error"))
+    {
+        <div id="errornotification" class="notification is-danger" style="width:100%;position:absolute;bottom:5px;">
+            <button class="delete"></button>
+            @TempData["Error"]
+        </div>
+        <script>
+            //hide the error after 5 seconds
+            setTimeout(() => {
+                document.getElementById("errornotification").style.display = "none";
+            }, 5 * 1000);
+        </script>
+    }
     <script async type="text/javascript" src="../js/bulma.js"></script>
     <script>
         //boilerplate js support for modal in bulma
@@ -102,6 +116,19 @@
                 if (e.keyCode === 27) { // Escape key
                     closeAllModals();
                 }
+            });
+        });
+    </script>
+    <script>
+        //javascript for handling close of notifications
+        //See: https://bulma.io/documentation/elements/notification/
+        document.addEventListener('DOMContentLoaded', () => {
+            (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+                const $notification = $delete.parentNode;
+
+                $delete.addEventListener('click', () => {
+                    $notification.parentNode.removeChild($notification);
+                });
             });
         });
     </script>

@@ -1,13 +1,12 @@
-﻿using CRM.Domain.Entities;
+﻿using CRM.Domain.Dto;
 
 namespace CRM.Frontend.Models
 {
     public class CompaniesVM
     {
-        public CompaniesVM(IEnumerable<Company> companies) 
+        public CompaniesVM() 
         {
-            Companies= companies;
         }
-        public IEnumerable<Company> Companies { get; private set; }
+        public IEnumerable<CompanyDto> Companies { get; set; }
     }
 }

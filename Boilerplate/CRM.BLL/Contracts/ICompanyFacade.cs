@@ -12,5 +12,6 @@ namespace CRM.BLL.Contracts
     public interface ICompanyFacade
     {
         Task<Result<CompanyDto>> CreateCompany(CreateCompanyRequest request);
+        Task<Result<IEnumerable<CompanyDto>>> GetAllCompanies();
     }
 }

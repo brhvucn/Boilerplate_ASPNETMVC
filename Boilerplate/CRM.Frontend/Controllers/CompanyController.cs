@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CRM.Frontend.Controllers
 {
-    public class CompanyController : Controller
+    public class CompanyController : BaseController
     {
         private ICompanyFacade companyFacade;
         public CompanyController(ICompanyFacade companyFacade)
@@ -16,9 +16,20 @@ namespace CRM.Frontend.Controllers
             this.companyFacade = companyFacade;
         }
         //Not decorated with an annotation, this means that this is by default httpget
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            CompaniesVM model = new CompaniesVM(new List<Company>());
+            CompaniesVM model = new CompaniesVM();//create the model
+            var companiesResult = await this.companyFacade.GetAllCompanies();//get all the companies
+            if (companiesResult.Success) //if we successfully got the companies
+            {
+                //add the companies to the view model
+                model.Companies = companiesResult.Value;
+            }
+            else
+            {
+                //show an error message
+                ShowErrorMessage(companiesResult.Error.Message);
+            }
             return View(model);
         }
 

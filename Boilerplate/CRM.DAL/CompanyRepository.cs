@@ -58,6 +58,7 @@ namespace CRM.DAL
             //construct the object
             Email emailObject = Email.Create(email); //we assume email is always present, since we have guard clauses to prevent it from being null
             Company company = new Company(name, emailObject);
+            company.Id = id;
             if(
                 !string.IsNullOrEmpty(street) &&
                 !string.IsNullOrEmpty(city) &&
@@ -75,7 +76,7 @@ namespace CRM.DAL
             List<Company> result = new List<Company>();
             using (var connection = dataContext.CreateConnection())
             {
-                string command = $"delete from {TableNames.CompanyTableName}";
+                string command = $"select * from {TableNames.CompanyTableName}";
                 var dbResult = await connection.QueryAsync(command);
                 foreach(var row in dbResult)
                 {                   

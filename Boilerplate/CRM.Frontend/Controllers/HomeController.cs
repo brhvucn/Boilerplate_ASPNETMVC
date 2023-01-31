@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace CRM.Frontend.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -14,7 +14,7 @@ namespace CRM.Frontend.Controllers
         }
 
         public IActionResult Index()
-        {
+        {            
             return View();
         }
 
