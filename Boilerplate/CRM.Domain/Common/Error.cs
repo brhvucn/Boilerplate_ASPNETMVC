@@ -19,6 +19,13 @@ namespace CRM.Domain.Common
             StatusCode = statusCode;
         }
 
+        internal Error(Exception ex, int statusCode = 500)
+        {
+            Code = "general.exception";
+            Message = ex.Message;
+            StatusCode = statusCode;
+        }
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Code;

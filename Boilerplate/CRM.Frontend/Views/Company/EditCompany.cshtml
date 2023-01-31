@@ -1,0 +1,43 @@
+﻿@model EditCompanyVM
+<div class="box">
+    <h1 class="title is-4">
+        Edit Company
+    </h1>
+    <form asp-action="UpdateCompany" asp-controller="Company">
+        <input type="hidden" name="id" value="@Model.Company.Id"/>
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input class="input" required name="name" type="text" value="@Model.Company.Name">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Street</label>
+            <div class="control">
+                <input class="input" required name="street" type="text" value="@Model.Company.Address">
+            </div>
+        </div>       
+        <div class="field">
+            <label class="label">Zip code</label>
+            <div class="control">
+                <input class="input" required name="zip" type="text" value="@Model.Company.ZipCode">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">City</label>
+            <div class="control">
+                <input class="input" required name="city" type="text" value="@Model.Company.City">
+            </div>
+        </div>
+         <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input class="input" required name="email" type="email" value="@Model.Company.Email">
+            </div>
+        </div>
+        <hr />
+        <a asp-action="Index" asp-controller="Company" class="button is-default">Back</a>
+        <button class="button is-success is-pulled-right">Update</button>
+        <div class="is-clearfix"></div>
+    </form>
+</div>

@@ -29,6 +29,12 @@ namespace CRM.Frontend.Utilities.Mapper
                 .ForMember(dest => dest.ZipCode, opt => opt.MapFrom(src => src.Address.ZipCode))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email.Value))
                 .ReverseMap();
+            CreateMap<Company, UpdateCompanyRequest>()
+                .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Address.Street))
+               .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.Address.City))
+               .ForMember(dest => dest.ZipCode, opt => opt.MapFrom(src => src.Address.ZipCode))
+               .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email.Value))
+               .ReverseMap();
         }
     }
 }

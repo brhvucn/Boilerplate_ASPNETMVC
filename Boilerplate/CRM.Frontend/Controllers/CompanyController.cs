@@ -33,6 +33,54 @@ namespace CRM.Frontend.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> DeleteCompany()
+        {
+            int id = int.Parse(Request.Form["companyid"]);
+            await this.companyFacade.DeleteCompany(id);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> EditCompany(int id)
+        {
+            EditCompanyVM model = new EditCompanyVM();
+            var companyResult = await this.companyFacade.GetCompany(id);
+            if (companyResult.Success)
+            {
+                model.Company = companyResult.Value;
+            }
+            else
+            {
+                model.Company = new Domain.Dto.CompanyDto(); //prevents null exception in view
+                ShowErrorMessage(companyResult.Error.Message);
+            }
+            return View(model);
+        }
+
+        public async Task<IActionResult> UpdateCompany()
+        {
+            int id = int.Parse(Request.Form["id"]);
+            string name = Request.Form["name"];
+            string street = Request.Form["street"];
+            string city = Request.Form["city"];
+            string zip = Request.Form["zip"];
+            string email = Request.Form["email"];
+            //create the update request
+            UpdateCompanyRequest request = new UpdateCompanyRequest();
+            request.Name = name;
+            request.Street = street;
+            request.City = city;
+            request.ZipCode = zip;
+            request.Email = email;
+            request.Id = id;
+            //update it
+            var result = await this.companyFacade.UpdateCompany(request);
+            if(result.Failure)
+            {
+                ShowErrorMessage(result.Error.Message);
+            }
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateCompany()
         {

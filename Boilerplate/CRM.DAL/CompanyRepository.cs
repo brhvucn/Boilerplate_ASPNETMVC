@@ -94,7 +94,7 @@ namespace CRM.DAL
             {
                 string query = $"select * from {TableNames.CompanyTableName} where id = @id";
                 var dbResult = await connection.QueryAsync(query, new {id = id});
-                Company result = CreateCompany(dbResult);
+                Company result = CreateCompany(dbResult.First());
                 return result;
             }
         }
