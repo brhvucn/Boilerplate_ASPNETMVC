@@ -18,3 +18,7 @@ There are several libraries used in this solution:
 [AutoMapper](https://docs.automapper.org/en/stable/index.html) NuGet package to help with mapping between objects/entities. This can be seen in the `Facade` classes in the `CRM.BLL` project.
 
 [Dapper](https://github.com/DapperLib/Dapper) NuGet package with the lightweight ORM Dapper. Dapper is used to provide helper methods for querying the database.
+
+[Serilog](https://serilog.net/) Simple .NET logging with many options. In this project it is configured to log to SeQ
+
+[SeQ](https://datalust.co/seq) Centralized logging application that makes logging data easily available for search. It is recommended to use the Docker SeQ image to run SeQ in a container during development [Docker datalust/seq](https://hub.docker.com/r/datalust/seq)
