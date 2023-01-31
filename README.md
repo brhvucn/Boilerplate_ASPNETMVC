@@ -15,6 +15,8 @@ There are several libraries used in this solution:
 
 [FluentValidation](https://docs.fluentvalidation.net/en/latest/) NuGet package to validate business logic. Examples of this can be seen in the `Request` classes in the `CRM.Domain` project.
 
+[Ensure.That](https://www.nuget.org/packages/Ensure.That/) NuGet package that will help to make clear and easy to read guard clauses. This can be seen in the entities in the `CRM.Domain` project.
+
 [AutoMapper](https://docs.automapper.org/en/stable/index.html) NuGet package to help with mapping between objects/entities. This can be seen in the `Facade` classes in the `CRM.BLL` project.
 
 [Dapper](https://github.com/DapperLib/Dapper) NuGet package with the lightweight ORM Dapper. Dapper is used to provide helper methods for querying the database.
